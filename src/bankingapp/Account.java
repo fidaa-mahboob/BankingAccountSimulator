@@ -1,15 +1,16 @@
 package bankingapp;
 
 public abstract class Account implements Rate {
-    private String name;
-    private String sSN;
-    private double balance;
-    private double rate;
+    String name;
+    String sSN;
+    double balance;
+    double rate;
     private String accNumber;
     public Account(String name, String sSN, double initDeposit) {
-        System.out.println("Name: " + name);
-        System.out.println("Account Name: ");
+        System.out.println("Name: " + name + " SSN: " + sSN + " BALANCE: $" + initDeposit);
         this.name = name;
+        this.sSN = sSN;
+        balance = initDeposit;
     }
 
     public void Deposit(){
