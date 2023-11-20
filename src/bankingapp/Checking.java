@@ -7,5 +7,6 @@ public class Checking extends Account {
 
     public Checking(String name, String sSN, double initDeposit) {
         super(name, sSN, initDeposit);
+        System.out.println("New Checking Acc");
     }
 }
