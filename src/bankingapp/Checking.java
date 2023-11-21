@@ -8,6 +8,12 @@ public class Checking extends Account {
     public Checking(String name, String sSN, double initDeposit) {
         super(name, sSN, initDeposit);
         accNumber = "2" + accNumber;
+        setDebitCard();
+    }
+
+    private void setDebitCard() {
+        debitCardNumber = (int) (Math.random() * Math.pow(10, 12));
+        debitCardPinq = (int) (Math.random() * Math.pow(10, 12));
     }
 
     public void showInfo(){
