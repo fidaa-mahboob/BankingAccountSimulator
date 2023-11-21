@@ -13,6 +13,7 @@ public abstract class Account implements Rate {
         balance = initDeposit;
         ++index;
         this.accNumber = setAccountNumber();
+        setRate();
     }
 
     private String setAccountNumber() {
@@ -20,6 +21,8 @@ public abstract class Account implements Rate {
         int randomNumber = (int)(Math.random() * Math.pow(10, 3));
         return sSN.substring(sSN.length() - 2) + uniqueID + randomNumber;
     }
+
+    public abstract void setRate();
 
     public void Deposit(){
 
@@ -38,6 +41,7 @@ public abstract class Account implements Rate {
                 "NAME: " + name
                 + "\nBALANCE: £" + balance
                 + "\nACCOUNT NUMBER: " + accNumber
+                + "\nRATE: " + rate + "%"
         );
     }
 }

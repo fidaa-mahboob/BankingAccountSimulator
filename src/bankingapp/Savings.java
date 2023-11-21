@@ -10,6 +10,11 @@ public class Savings extends Account {
         setUpSavingsAccount();
     }
 
+    @Override
+    public void setRate() {
+        rate = getBaseRate() - .25;
+    }
+
     private void setUpSavingsAccount(){
         savingsAccID = (int) (Math.random() * Math.pow(10, 3));
         savingsAccKey = (int) (Math.random() * Math.pow(10, 4));
