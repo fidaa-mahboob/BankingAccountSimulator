@@ -5,4 +5,6 @@ public interface Rate {
         return 2.5;
     }
 
+
+
 }

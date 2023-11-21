@@ -24,16 +24,37 @@ public abstract class Account implements Rate {
 
     public abstract void setRate();
 
-    public void Deposit(){
-
+    public void compound() {
+        double accruedInterest = balance * (rate / 100);
+        balance += accruedInterest;
+        System.out.printf("Compound Interest: £%.2f %n", accruedInterest);
+        showBalance();
     }
 
-    public void Withdraw(){
-
+    public void deposit(double amount){
+        balance += amount;
+        System.out.println("Deposited: £" + amount);
+        showBalance();
     }
 
-    public void Transfer(){
+    public void withdraw(double amount){
+        balance -= amount;
+        System.out.println("Withdrawn: £" + amount);
+        showBalance();
+    }
 
+    public void transfer(String recipient, double amount){
+        if (!recipient.isEmpty()){
+            balance -= amount;
+            System.out.println("Transfer £" + amount + " to " + recipient + " successful");
+            showBalance();
+        } else {
+            System.out.println("Add the recipient to complete transfer.");
+        }
+    }
+
+    public void showBalance(){
+        System.out.println("Current Balance: £" + balance);
     }
 
     public void showInfo(){
