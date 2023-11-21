@@ -1,11 +1,11 @@
 package bankingapp;
 
 public abstract class Account implements Rate {
-    String name;
-    String sSN;
-    double balance;
-    double rate;
-    String accNumber;
+    private String name;
+    private String sSN;
+    private double balance;
+    protected double rate;
+    protected String accNumber;
     static int index = 10000;
     public Account(String name, String sSN, double initDeposit) {
         this.name = name;
