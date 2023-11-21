@@ -5,21 +5,20 @@ public abstract class Account implements Rate {
     String sSN;
     double balance;
     double rate;
-    private String accNumber;
+    String accNumber;
     static int index = 10000;
     public Account(String name, String sSN, double initDeposit) {
-        System.out.println("Name: " + name + " SSN: " + sSN + " BALANCE: $" + initDeposit);
         this.name = name;
         this.sSN = sSN;
         balance = initDeposit;
+        ++index;
         this.accNumber = setAccountNumber();
-        System.out.println("Account Number: " + this.accNumber);
     }
 
     private String setAccountNumber() {
-
-        int uniqueID = index ;
-        return sSN.substring(sSN.length() - 2, sSN.length()) + uniqueID;
+        int uniqueID = index;
+        int randomNumber = (int)(Math.random() * Math.pow(10, 3));
+        return sSN.substring(sSN.length() - 2) + uniqueID + randomNumber;
     }
 
     public void Deposit(){
@@ -35,6 +34,10 @@ public abstract class Account implements Rate {
     }
 
     public void showInfo(){
-        System.out.println("null");
+        System.out.println(
+                "NAME: " + name
+                + "\nBALANCE: £" + balance
+                + "\nACCOUNT NUMBER: " + accNumber
+        );
     }
 }
